@@ -4,6 +4,8 @@ A mobile-first React implementation of the **Fastor** Figma design: phone sign-u
 
 **Stack:** React 19, React Router 7, Vite, CSS Modules (no UI library). Fonts are Mulish, League Spartan and Inter, the same as in the design.
 
+**Live demo:** https://skd-fastor.vercel.app (open in mobile view; any 6-digit OTP works)
+
 ## Run it
 
 ```bash
