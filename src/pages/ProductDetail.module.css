@@ -1,0 +1,134 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) 24px calc(42px + env(safe-area-inset-bottom));
+  font-family: var(--font-food);
+  color: var(--brown);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  height: 44px;
+}
+
+.hero {
+  width: 100%;
+  aspect-ratio: 323 / 223;
+  border-radius: 36px;
+  object-fit: cover;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 49px;
+  margin-top: 12px;
+  border-top: 1px solid var(--orange-line);
+  border-bottom: 1px solid var(--orange-line);
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--orange);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.stepper button {
+  display: grid;
+  place-items: center;
+  transition: opacity 0.15s;
+}
+
+.stepper button:disabled {
+  opacity: 0.35;
+}
+
+.qty {
+  min-width: 13px;
+  font-size: 24.43px;
+  line-height: 1;
+  text-align: center;
+}
+
+.name {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.description {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.48px;
+}
+
+.portions {
+  margin: 29px 0 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.portionTitle {
+  padding: 0;
+  margin-bottom: 9px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  height: 31px;
+  cursor: pointer;
+}
+
+.optionLabel {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+/* Dotted leader: 2px dash / 2px gap, matching the design's dashed line. */
+.leader {
+  flex: 1;
+  height: 1px;
+  margin: 0 3px;
+  background: repeating-linear-gradient(to right, var(--orange-line) 0 2px, transparent 2px 4px);
+}
+
+.optionPrice {
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.radio {
+  margin-left: 8px;
+}
+
+.option:has(:focus-visible) .radio {
+  outline: 2px solid var(--brand-light);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 32px;
+}

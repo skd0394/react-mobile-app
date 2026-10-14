@@ -1,0 +1,252 @@
+.screen {
+  min-height: 100dvh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  font-family: var(--font-food);
+  color: var(--brown);
+}
+
+/* ---- Header ---- */
+
+.location {
+  height: 60px;
+  padding: 5px var(--gutter) 0;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-inter);
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+}
+
+.locationLabel {
+  opacity: 0.4;
+}
+
+.locationValue {
+  margin-top: 7px;
+  font-weight: 500;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 var(--gutter);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  width: 174px;
+  height: 60px;
+  padding-left: 12px;
+  border-radius: 0 0 20px 20px;
+  background: var(--surface);
+  font-family: var(--font-inter);
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(0 0 0 / 0.5);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.action {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.call {
+  background: linear-gradient(to right, #ff986d, #ff6e6a);
+}
+
+.wallet {
+  background: linear-gradient(to right, #83d4f3, #4a70c7);
+}
+
+/* ---- Content ---- */
+
+.content {
+  padding: 0 26px;
+}
+
+.sectionTitle {
+  margin: 36px 0 0 2px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--brown);
+}
+
+.bestSellers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+  margin: 9px 0 0;
+  padding: 0 2px;
+  list-style: none;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 71.68 / 108;
+}
+
+.tileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.priceTag {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  min-width: 38px;
+  height: 16px;
+  padding: 1.5px 4px 0 6px;
+  border-radius: 30px 0 0 30px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 12px;
+  line-height: 14.5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.popular .sectionTitle {
+  margin-top: 49px;
+}
+
+.orders {
+  margin: 1px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order {
+  display: flex;
+  gap: 13px;
+  padding: 19px 0;
+}
+
+.order + .order {
+  border-top: 1px solid var(--orange-line);
+}
+
+.orderImage {
+  flex: none;
+  width: 71.68px;
+  height: 108px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.orderInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 19px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.row + .row {
+  margin-top: 4px;
+}
+
+.row:last-child {
+  margin-top: 5px;
+  align-items: center;
+}
+
+.orderName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+}
+
+.orderTotal {
+  flex: none;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--orange);
+}
+
+.meta {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.pill {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 100px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  font-family: var(--font-food);
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.075px;
+  white-space: nowrap;
+}
+
+.pillSolid {
+  background: var(--orange);
+  color: #fff;
+  font-weight: 500;
+}
+
+.track {
+  min-width: 100px;
+}
+
+.empty {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* ---- Toast ---- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  max-width: calc(min(100vw, var(--shell-width)) - 40px);
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--brown);
+  color: #fff;
+  font-size: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.toast[data-visible] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
